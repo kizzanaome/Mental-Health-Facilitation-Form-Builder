@@ -15,6 +15,9 @@ class Posts extends Component implements Forms\Contracts\HasForms
     public $slug;
     public $image;
 
+    protected $fillable = ['title', 'body', 'slug', 'image'];
+
+
     protected function getFormSchema(): array
     {
         return [
@@ -29,6 +32,12 @@ class Posts extends Component implements Forms\Contracts\HasForms
     public function submit()
     {
         dd($this->title);
+        // Posts::create([
+        //     'title' => request('title'),
+        //     'body' => request('body'),
+        //     'slug' => request('slug'),
+        //     'image' => request('image')
+        // ]);
     }
 
     public function render()
